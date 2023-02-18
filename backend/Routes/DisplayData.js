@@ -9,5 +9,13 @@ router.post('/foodData', (req,res)=> {
         res.send('Server Error')
     }
 })
+router.post('/foodData2', (req,res)=> {
+    try {
+        res.send([global.food_items2,global.foodCategory])
+    } catch (error) {
+        console.log(error.msg);
+        res.send('Server Error')
+    }
+})
 
 module.exports = router;

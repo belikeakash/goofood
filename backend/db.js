@@ -28,6 +28,18 @@ const mongoDB = async() =>{
                     global.foodCategory = catData;
                 }
             })
+            const fetchedData3 = await mongoose.connection.db.collection('food_items2');
+            fetchedData3.find({}).toArray(function(err,data) {
+
+                if(err) {
+                    console.log('---ERROR---');
+                }
+                else {
+                   //  console.log(data)
+                   global.food_items2 = data;
+                }
+            })
+            
     }
     })
     

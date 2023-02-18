@@ -8,7 +8,7 @@ import '../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js'
 import Signup from './screens/Signup';
 import { Context } from './components/Context';
 import Cart from './screens/Cart';
-import BarcodeScreen from './screens/BarcodeScreen';
+import {BarcodeScanner} from './screens/BarcodeScreen';
 
 function App() {
   return (
@@ -21,7 +21,7 @@ function App() {
           <Route expath path='/login' element={<Login />} />
           <Route expath path='/createuser' element={<Signup />} />
           <Route expath path='/cart' element={<Cart />} />
-          <Route expath path='/barcode' element={<BarcodeScreen />} />
+          <Route expath path='/barcode' element={<BarcodeScanner />} />
         </Routes>  
       </div>
     </Router>
