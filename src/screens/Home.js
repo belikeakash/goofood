@@ -24,7 +24,7 @@ export default function Home() {
       }
     })
     response = await response.json();
-    // console.log(response[0], response[1]);
+    console.log(response[0], response[1]);
     setFoodItem(response[0]);
     setFoodCat(response[1]);
   }
@@ -73,8 +73,8 @@ export default function Home() {
               {foodItem !== [] ? foodItem.filter((item) => item.CategoryName === (data.CategoryName) && (item.name.toLowerCase().includes(search))).map(filterItems => {
                 return (
                   <div key={filterItems._id} className="col-12 col-md-6 col-lg-3">
-                    <Card _id={filterItems._id} foodName={filterItems.name}
-                      options={filterItems.options[0]}
+                    <Card _id={filterItems._id} name={filterItems.name}
+                      price={filterItems.Price}
                       imgSrc={filterItems.img}
                     />
                   </div>

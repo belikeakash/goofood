@@ -11,6 +11,8 @@ const BarcodeScanner = () => {
     onResult(result) {
       setResult(result.getText());
       storeId = result.text[result.text.length - 1];
+      console.log(result);
+      console.log(storeId);
     },
   });
   function handleGoToStore () {

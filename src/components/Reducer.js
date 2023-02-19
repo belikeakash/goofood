@@ -23,7 +23,7 @@ export const reducer = (state, action) => {
                 for(let i=0;i<arr.length;i++) {
                     // console.log(arr[i]);
                     if(arr[i].id===action.id) {
-                        arr[i] = { ...arr[i], qty: parseInt(action.qty) + arr[i].qty, price: parseInt(action.price) + arr[i].price }
+                        arr[i] = { ...arr[i], qty: parseInt(action.qty) + parseInt(arr[i].qty), price: parseInt(action.price) + arr[i].price }
                     }
                 }
                 
