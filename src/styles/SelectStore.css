@@ -1,0 +1,98 @@
+.selectstore-0 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f1f1f1;
+  }
+  
+  .selectstore-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .selectstore-1 video {
+    width: 100%;
+    max-width: 300px;
+    border: 10px solid red;
+  }
+  
+  .selectstore-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .selectstore-2 h1 {
+    font-size: 24px;
+  }
+  
+  .selectstore-3 {
+    text-align: center;
+  }
+  
+  .selectstore-3 h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .selectstore-4 {
+    padding: 10px 20px;
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .selectstore-4:hover {
+    background-color: #e53935;
+  }
+  
+  /* Responsive CSS for Mobile Devices */
+  @media (max-width: 600px) {
+    .selectstore-1 video {
+      max-width: 100%;
+    }
+  
+    .selectstore-2 h1 {
+      font-size: 18px;
+    }
+  
+    .selectstore-3 h3 {
+      font-size: 16px;
+    }
+  
+    .selectstore-4 {
+      font-size: 14px;
+    }
+  }
+  
+  /* Responsive CSS for Tablet Devices */
+  @media (min-width: 601px) and (max-width: 1024px) {
+    .selectstore-1 video {
+      max-width: 80%;
+    }
+  }
+  
+  /* Responsive CSS for Desktop Devices */
+  @media (min-width: 1025px) {
+    .selectstore-1 video {
+      max-width: 100%;
+    }
+  
+    .selectstore-2 h1 {
+      font-size: 28px;
+    }
+  
+    .selectstore-3 h3 {
+      font-size: 24px;
+    }
+  
+    .selectstore-4 {
+      font-size: 18px;
+    }
+  }
+  

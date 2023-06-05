@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
+import '../styles/Login.css'
 
 export default function Login() {
   let navigate = useNavigate();
@@ -22,7 +23,7 @@ export default function Login() {
     if(json.success) {
       localStorage.setItem("authToken", json.authToken)
       console.log(localStorage.getItem("authToken"));
-      navigate('/choose')
+      navigate('/selectstore')
     }
   }
   const onChange = (e) => {
@@ -33,27 +34,30 @@ export default function Login() {
   return (
 
     <>
-      <div className="conatiner">
+      <div className="login-0">
         <form onSubmit={handleSubmit}>
 
-          <div className="mb-3">
-            <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
-            <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name='email' value={credentials.email} onChange={onChange} />
-            <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
+          <div className="login-1">
+            <label htmlFor="exampleInputEmail1" className="login-2">Email address</label>
+            <input type="email" className="login-3" id="exampleInputEmail1" aria-describedby="emailHelp" name='email' value={credentials.email} onChange={onChange} />
+            <div id="emailHelp" className="login-4">We'll never share your email with anyone else.</div>
           </div>
-          <div className="mb-3">
-            <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
-            <input type="password" className="form-control" id="exampleInputPassword1" name='password' value={credentials.password} onChange={onChange} />
+          <div className="login-1">
+            <label htmlFor="exampleInputPassword1" className="login-2">Password</label>
+            <input type="password" className="login-3" id="exampleInputPassword1" name='password' value={credentials.password} onChange={onChange} />
           </div>
 
 
-
-          <button type="submit" className="btn btn-primary m-3">Submit</button>
+          <div className="login-9">
+          <button type="submit" className="login-7">Submit</button>
+          </div>
+          
+          <Link to='/createuser' className='login-8'>I'm a new user</Link>
         </form>
-        <Link to='/createuser' className='m-3 btn btn-danger'>I'm a new user</Link>
+        
 
       </div>
-
+    
     </>
   )
 }

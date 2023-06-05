@@ -1,7 +1,8 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import Badge from 'react-bootstrap/Badge'
 import { CartState } from './Context';
+import '../styles/Navbar.css'
+import { BsFillCartFill } from 'react-icons/bs'
 
 export default function Navbar() {
     const navigate = useNavigate();
@@ -12,54 +13,41 @@ export default function Navbar() {
     const movetoCart = () => {
         navigate('/cart')
     }
-    const {state, dispatch} = CartState()
+    const { state, dispatch } = CartState()
     return (
-        <div>
-            <nav className="navbar navbar-expand-lg navbar-dark bg-success">
-                <div className="container-fluid">
-                    <Link className="navbar-brand fs-1 fst-italic" to="/">GooFood</Link>
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="/navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
-                    <div className="collapse navbar-collapse" id="navbarNav">
-                        <ul className="navbar-nav me-auto mb-2">
-                            <li className="nav-item">
-                                <Link className="nav-link " aria-current="page" to="/">Home</Link>
-                            </li>
-                            {
-                                localStorage.getItem("authToken") ? <li className="nav-item">
-                                    <Link className="nav-link " aria-current="page" to="/">My Orders</Link>
-                                </li> :
-                                    " "
+        <div className='navbar-0'>
 
-                            }
-                        </ul>
-                        <div className="d-flex">
-                            {
-                                !localStorage.getItem("authToken") ? <div> <Link className="btn bg-white text-success mx-1" to="/login">Login</Link>
-                                    <Link className="btn bg-white text-success mx-1" to="/createuser">Signup</Link> </div> :
-                                    <div className="">
-                                    <div className="btn bg-white text-success mx-2" onClick={movetoCart}>
+            <div className="navbar-1">
+                <div className="navbar-2"><Link to="/">DQueue</Link></div>
+                <div className="navbar-3">
+                    <div className="navbar-9">
+                        <Link className="" to="/pickproducts">Scan 🔍</Link>
+                        {
+                        localStorage.getItem("authToken") ? <div className="navbar-4">
+                            <Link className=" " to="/selectstore">Store 🛍️</Link>
+                        </div> :
+                            " "
 
-                                        My Cart {" "}
-                                        
-                                    </div>
-                                    <div className="btn bg-white text-danger mx-2" onClick={handleLogout}>
-                                        Logout
-                                    </div>
-                                    </div>
-                            }
-                            
-
-
-                        </div>
-
-
-
+                    }
                     </div>
+                    
+                    {
+                        !localStorage.getItem("authToken") ?
+                        <div className="navbar-9">
+                             <div className='navbar-4'> <Link className="" to="/login">Login</Link> </div>
+                            <div className="navbar-4"><Link className="" to="/createuser">Signup</Link></div> 
+                        </div> :
+                            <div className='navbar-9'>
+                                <div className="navbar-4" onClick={movetoCart}>
+                                    🛒
+                                </div>
+                                <div className="navbar-4" onClick={handleLogout}>
+                                    Logout
+                                </div>
+                            </div>
+                    }
                 </div>
-            </nav>
-
+            </div>
         </div>
     )
 }
