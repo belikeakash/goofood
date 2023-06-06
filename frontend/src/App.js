@@ -14,7 +14,7 @@ function App() {
   return (
     <Context>
 
-    <Router basename='/'>
+    <Route>
       <div> 
         <Routes>
           <Route expath path='/' element={<Home />} />  
@@ -27,7 +27,7 @@ function App() {
           <Route expath path='/checkout' element={<Checkout />} />
         </Routes>  
       </div>
-    </Router>
+    </Route>
     </Context>
   );
 }
