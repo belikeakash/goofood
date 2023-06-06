@@ -1,13 +1,15 @@
 const mongoose = require('mongoose')
-const mongouri = 'mongodb+srv://admin:12345@cluster0.hhqn7bh.mongodb.net/gofoodmern?retryWrites=true&w=majority';
-
+const {MONGOURI} = require('./config/keys')
+console.log('mmm', MONGOURI); 
+// const mongouri = 'mongodb+srv://admin:12345@cluster0.hhqn7bh.mongodb.net/gofoodmern?retryWrites=true&w=majority';
 const mongoDB = async() =>{
-    await mongoose.connect(mongouri, {useNewUrlParser: true},async(err, data)=> {
+    await mongoose.connect(MONGOURI, {useNewUrlParser: true},async(err, data)=> {
         if(err) {
             console.log('---ERROR---');
         }
         else {
             console.log('Connected');
+            console.log('aa'); 
             const fetchedData = await mongoose.connection.db.collection('food_items');
             fetchedData.find({}).toArray(function(err,data) {
 
