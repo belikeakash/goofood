@@ -19,7 +19,7 @@ const BarcodeScanner = () => {
   else if (storeId == 2) {
     storeData = '2';
   }
-  const url = `http://localhost:5000/api/foodData${storeData}`
+  const url = `/api/foodData${storeData}`
   const loadData = async () => {
     console.log(url);
     let response = await fetch(url, {

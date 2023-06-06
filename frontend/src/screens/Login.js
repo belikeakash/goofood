@@ -7,7 +7,7 @@ export default function Login() {
   const [credentials, setCredentials] = useState({ email: '', password: '' })
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch('http://localhost:3000/api/loginuser', {
+    const response = await fetch('/api/loginuser', {
       method: 'POST',
       headers: {
         "Content-Type": 'application/json'

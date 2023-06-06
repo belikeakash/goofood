@@ -7,7 +7,7 @@ export default function Signup() {
     const [credentials, setCredentials] = useState({name:'', email:'', password: '', geolocation:''})
     const handleSubmit = async(e) => {
         e.preventDefault();
-        const response = await fetch('http://localhost:3000/api/createuser', {
+        const response = await fetch('api/createuser', {
             method:'POST',
             headers: {
                 "Content-Type" : 'application/json'
