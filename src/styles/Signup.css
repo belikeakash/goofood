@@ -1,0 +1,83 @@
+.signup-0 {
+    height: 100vh;
+    background-color: #f1f1f1;
+}
+
+input {
+    border: none;
+    border-radius: 3px;
+}
+
+.signup-7 {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+.signup-1 {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    padding: 20px;
+    padding-top: 20vh;
+  }
+  
+  .signup-2 {
+    margin-bottom: 10px;
+  }
+  
+  .signup-3 {
+    width: 100%;
+    padding: 10px;
+  }
+  
+  .signup-4 {
+    font-size: 16px;
+    
+    margin-top: 5px;
+  }
+
+  .signup-6 {
+    border: none;
+    background-color: #f44336;
+    height: 24px;
+    color: wheat;
+    border-radius: 3px;
+  }
+  
+  .signup-5 {
+    margin-top: 10px;
+    color: #f44336;
+    text-align: center;
+    text-decoration: none;
+  }
+  
+  .signup-5:hover {
+    color: #e53935;
+  }
+  
+  /* Mobile devices */
+  @media (max-width: 767px) {
+    .signup-1 {
+      padding: 10px;
+      padding-top: 50vh;
+    }
+  }
+  
+  /* Tablet devices */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .signup-1 {
+      padding: 15px;
+      padding-top: 30vh;
+    }
+  }
+  
+  /* Desktop devices */
+  @media (min-width: 1024px) {
+    .signup-1 {
+      padding: 20px;
+      padding-top: 30vh;
+    }
+  }
+  

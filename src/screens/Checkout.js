@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { jsPDF } from "jspdf";
 import { CartState } from "../components/Context";
 import { storeId } from "./SelectStore";
+import Navbar from '../components/Navbar'
 import '../styles/Checkout.css'
 
 export default function App() {
@@ -76,7 +77,9 @@ export default function App() {
      console.log('rendered');   
     })
     return (
-        <div className="checkout-0">
+        <div className="">
+            <Navbar />
+            <div className="checkout-0">
             <div className="checkout-15">You are Shopping in : Store-{storeId}</div> 
             <div className="checkout-15">Your total is : {symbol}{totalPrice}</div>
             <div className="checkout-15">Enter Card Details</div>
@@ -106,6 +109,7 @@ export default function App() {
             
 
             <button className="checkout-12" onClick={generateSimplePDF}>Pay & Generate Bill</button>
+        </div>
         </div>
     );
 }

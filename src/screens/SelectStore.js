@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useZxing } from "react-zxing";
 import '../styles/SelectStore.css'
+import Navbar from "../components/Navbar";
 
 let storeId = 1;
 
@@ -21,7 +22,9 @@ const BarcodeScanner = () => {
     navigate('/choose')
   }
   return (
-    <div className="selectstore-0" >
+    <div className="">
+      <Navbar />
+      <div className="selectstore-0" >
       <div className="selectstore-1" style={{display:'flex', justifyContent:'center', alignItems:'center'}}>
       <video ref={ref} style={{width:'300px', borderRadius: '10px' , border:'2px solid blue'}} />
       
@@ -34,6 +37,7 @@ const BarcodeScanner = () => {
           </div>
         }
       </div>
+    </div>
     </div>
   );
 };
