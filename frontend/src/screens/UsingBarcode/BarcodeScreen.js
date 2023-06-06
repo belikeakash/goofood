@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { useZxing } from "react-zxing";
 import { CartState } from '../../components/Context';
 import { storeId } from "../SelectStore";
@@ -13,10 +13,10 @@ const BarcodeScanner = () => {
   const [foodItem, setFoodItem] = useState([]);
   const [qty, setQty] = useState(1);
   let storeData;
-  if (storeId == 1) {
+  if (storeId === 1) {
     storeData = '';
   }
-  else if (storeId == 2) {
+  else if (storeId === 2) {
     storeData = '2';
   }
   const url = `https://dqueue-akash.onrender.com/api/foodData${storeData}`
@@ -33,9 +33,11 @@ const BarcodeScanner = () => {
     console.log(response[0]);
     setFoodCat(response[1]);
   }
+  console.log(foodCat);
   useEffect(() => {
     loadData()
-  }, [])
+    
+  })
   function getProduct(data) {
     // console.log(foodItem);
     for (let i = 0; i < foodItem.length; i++) {
@@ -45,7 +47,7 @@ const BarcodeScanner = () => {
     }
     return foodItem[0];
   }
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [result, setResult] = useState("NO STORE SELECTED");
   const [pro, setPro] = useState({})
   const { ref } = useZxing({
@@ -89,9 +91,9 @@ const BarcodeScanner = () => {
     setQty(1)
 
   }
-  function handleGoToStore() {
-    navigate('/')
-  }
+  // function handleGoToStore() {
+  //   navigate('/')
+  // }
   return (
     <div className="barcode-0" >
       <div className="" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>

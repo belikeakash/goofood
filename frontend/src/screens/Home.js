@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import Card from '../components/Card'
-import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import { storeId } from './SelectStore'
 import '../styles/Home.css'
@@ -10,10 +9,10 @@ export default function Home() {
   const [foodCat, setFoodCat] = useState([]);
   const [foodItem, setFoodItem] = useState([]);
   let storeData;
-  if (storeId == 1) {
+  if (storeId === 1) {
     storeData = '';
   }
-  else if (storeId == 2) {
+  else if (storeId === 2) {
     storeData = '2';
   }
   const url = `https://dqueue-akash.onrender.com/api/foodData${storeData}`
@@ -32,7 +31,7 @@ export default function Home() {
   }
   useEffect(() => {
     loadData()
-  }, [])
+  })
   return (
     <div>
       <Navbar />

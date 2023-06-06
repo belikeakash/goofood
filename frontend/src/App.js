@@ -1,7 +1,7 @@
 import './App.css'; 
 import Home from './screens/Home';
 import Home2 from './screens/UsingBarcode/Home';
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import {Routes, Route} from 'react-router-dom'
 import Login from './screens/Login';
 import Signup from './screens/Signup';
 import { Context } from './components/Context';
