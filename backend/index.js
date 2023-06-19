@@ -24,13 +24,13 @@ app.use(express.json())
 app.use('/api', require('./Routes/CreateUser'))
 app.use('/api', require('./Routes/DisplayData'))
 
-if(process.env.NODE_ENV=='production') {
-    const path = require('path');
-    app.get('/', (req,res)=> {
-        app.use(express.static(path.resolve(__dirname, 'frontend', 'build')))
-        res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'))
-    })
-}
+// if(process.env.NODE_ENV=='production') {
+//     const path = require('path');
+//     app.get('/', (req,res)=> {
+//         app.use(express.static(path.resolve(__dirname, 'frontend', 'build')))
+//         res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'))
+//     })
+// }
 
 app.listen(port, ()=> {
     console.log('Running on PORT');
