@@ -15,7 +15,7 @@ export default function Home() {
   else if (storeId === 2) {
     storeData = '2';
   }
-  const url = `http://localhost:5000/api/foodData${storeData}`
+  const url = `https://goofood-1vax.vercel.app/api/foodData${storeData}`
   // console.log('url', url);
   const loadData = async () => {
     console.log(url);
