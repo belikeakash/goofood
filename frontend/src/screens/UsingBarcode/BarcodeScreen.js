@@ -19,7 +19,7 @@ const BarcodeScanner = () => {
   else if (storeId === 2) {
     storeData = '2';
   }
-  const url = `https://goofood-1vax.vercel.app/api/foodData${storeData}`
+  const url = `https://goofood-ot7j3yjvw-belikeakash.vercel.app/api/foodData${storeData}`
   const loadData = async () => {
     console.log(url);
     let response = await fetch(url, {

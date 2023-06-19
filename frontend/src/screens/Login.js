@@ -7,7 +7,7 @@ export default function Login() {
   const [credentials, setCredentials] = useState({ email: '', password: '' })
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch('https://goofood-1vax.vercel.app/api/loginuser', {
+    const response = await fetch('https://goofood-ot7j3yjvw-belikeakash.vercel.app/api/loginuser', {
       method: 'POST',
       headers: {
         "Content-Type": 'application/json'

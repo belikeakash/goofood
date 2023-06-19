@@ -7,7 +7,7 @@ export default function Signup() {
     const [credentials, setCredentials] = useState({name:'', email:'', password: '', geolocation:''})
     const handleSubmit = async(e) => {
         e.preventDefault();
-        const response = await fetch('https://goofood-1vax.vercel.app/api/createuser', {
+        const response = await fetch('https://goofood-ot7j3yjvw-belikeakash.vercel.app/api/createuser', {
             method:'POST',
             headers: {
                 "Content-Type" : 'application/json'
