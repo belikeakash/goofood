@@ -6,7 +6,7 @@ const BASE_URL = process.env.PORT || 5000
 const mongoDB = require('./db') 
 
 app.use((req,res,next)=> {
-    res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+    res.setHeader("Access-Control-Allow-Origin", "https://64908e2944734c0c8c4f1346--keen-strudel-aadf79.netlify.app/");
     res.header(
         "Access-Control-Allow-Headers",
         "Origin, X-Requested-With, Content-Type, Accept"
