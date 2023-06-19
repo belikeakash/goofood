@@ -1,7 +1,7 @@
 import './App.css'; 
 import Home from './screens/Home';
 import Home2 from './screens/UsingBarcode/Home';
-import {Routes, Route} from 'react-router-dom'
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import Login from './screens/Login';
 import Signup from './screens/Signup';
 import { Context } from './components/Context';
@@ -14,7 +14,7 @@ function App() {
   return (
     <Context>
 
-    <Route>
+    <Router>
       <div> 
         <Routes>
           <Route expath path='/' element={<Home />} />  
@@ -27,7 +27,7 @@ function App() {
           <Route expath path='/checkout' element={<Checkout />} />
         </Routes>  
       </div>
-    </Route>
+    </Router>
     </Context>
   );
 }

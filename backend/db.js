@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const {MONGOURI} = require('./config/keys')
+const MONGOURI = 'mongodb+srv://admin:12345@cluster0.hhqn7bh.mongodb.net/gofoodmern?retryWrites=true&w=majority'
 console.log('mmm', MONGOURI); 
 // const mongouri = 'mongodb+srv://admin:12345@cluster0.hhqn7bh.mongodb.net/gofoodmern?retryWrites=true&w=majority';
 const mongoDB = async() =>{

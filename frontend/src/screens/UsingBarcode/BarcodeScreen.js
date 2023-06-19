@@ -19,7 +19,7 @@ const BarcodeScanner = () => {
   else if (storeId === 2) {
     storeData = '2';
   }
-  const url = `https://dqueue-akash.onrender.com/api/foodData${storeData}`
+  const url = `http://localhost:5000/api/foodData${storeData}`
   const loadData = async () => {
     console.log(url);
     let response = await fetch(url, {
@@ -37,7 +37,7 @@ const BarcodeScanner = () => {
   useEffect(() => {
     loadData()
     
-  })
+  },[])
   function getProduct(data) {
     // console.log(foodItem);
     for (let i = 0; i < foodItem.length; i++) {
