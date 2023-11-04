@@ -1,0 +1,20 @@
+.home-2::placeholder {
+    text-align: center;
+}
+
+.home-x{
+    background: white;
+    border-radius: 10px;
+}
+
+.home-x-top {
+    box-shadow: .2px .2px 10px #2460a7ff;
+    border-radius: 10px;
+    width: 95vw;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+.hr-class{
+    border: 2px solid #2460a7ff;
+}

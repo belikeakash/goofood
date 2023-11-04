@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: center;
     height: 90vh;
-    background-color: #f1f1f1;
+    background: linear-gradient(rgb(165, 210, 229), rgb(255, 255, 255));
   }
   
   .selectstore-1 {
@@ -41,14 +41,15 @@
   
   .selectstore-4 {
     padding: 10px 20px;
-    background-color: #f44336;
+    background-color: #84adff;
     color: #fff;
     border: none;
     cursor: pointer;
+    border-radius: 20px;
   }
   
   .selectstore-4:hover {
-    background-color: #e53935;
+    background-color: #84adff;
   }
   
   /* Responsive CSS for Mobile Devices */
@@ -96,3 +97,6 @@
     }
   }
   
+  h3 {
+    color: #84adff;
+  }

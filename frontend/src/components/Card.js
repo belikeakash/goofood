@@ -48,15 +48,17 @@ export default function Card(props) {
         <div>
             <div className="">
 
-                <div className="card" style={{ "width": "18rem", "maxHeight": "360px" }}>
+                <div className="card" style={{ "width": "14rem", "maxHeight": "360px" }}>
                     <img src={props.imgSrc} className="card-img" style={{  }} alt="..." />
                     <div className="card-body">
                         <h5 className="card-title">{props.name}</h5>
                         <h5>Price: {props.price}</h5>
                     </div>
-                    <input className='input' type="text" value={qty} placeholder='Enter Quantity' onChange={(e)=> {setQty(e.target.value)}} />
-                    <hr />
-                    <button className='button' onClick={handleAddtoCart}>Add to Cart</button>
+                    <div className="" style={{display:'flex', justifyContent:'center'}}>
+                    <input  className='input-x' type="text" value={qty} placeholder='Enter Quantity' onChange={(e)=> {setQty(e.target.value)}} />
+                    &nbsp;
+                    <button className='button' onClick={handleAddtoCart}>+</button>
+                    </div>
                 </div>
             </div>
         </div>

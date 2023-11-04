@@ -2,7 +2,9 @@ import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { CartState } from './Context';
 import '../styles/Navbar.css'
-import { BsFillCartFill } from 'react-icons/bs'
+import { BsFillCartFill, BsCartFill } from 'react-icons/bs'
+import {BiLogIn} from 'react-icons/bi'
+import {AiOutlineScan, AiFillHome} from 'react-icons/ai'
 
 export default function Navbar() {
     const navigate = useNavigate();
@@ -18,13 +20,13 @@ export default function Navbar() {
         <div className='navbar-0'>
 
             <div className="navbar-1">
-                <div className="navbar-2"><Link to="/">DQueue</Link></div>
+                <div className="navbar-2"><Link to="/">DQUEUE</Link></div>
                 <div className="navbar-3">
                     <div className="navbar-9">
-                        <Link className="" to="/pickproducts">Scan 🔍</Link>
+                        <Link className="" to="/pickproducts"><AiOutlineScan/></Link>
                         {
                         localStorage.getItem("authToken") ? <div className="navbar-4">
-                            <Link className=" " to="/selectstore">Store 🛍️</Link>
+                            <Link className=" " to="/selectstore"><AiFillHome /></Link>
                         </div> :
                             " "
 
@@ -34,15 +36,14 @@ export default function Navbar() {
                     {
                         !localStorage.getItem("authToken") ?
                         <div className="navbar-9">
-                             <div className='navbar-4'> <Link className="" to="/login">Login</Link> </div>
-                            <div className="navbar-4"><Link className="" to="/createuser">Signup</Link></div> 
+                             <div className='navbar-4'> <Link className="" to="/login"><BiLogIn /></Link> </div>
                         </div> :
                             <div className='navbar-9'>
                                 <div className="navbar-4" onClick={movetoCart}>
-                                    🛒
+                                <BsCartFill style={{cursor:'pointer'}} />
                                 </div>
                                 <div className="navbar-4" onClick={handleLogout}>
-                                    Logout
+                                    <BiLogIn style={{cursor:'pointer'}} />
                                 </div>
                             </div>
                     }

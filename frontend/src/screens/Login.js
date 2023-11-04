@@ -7,7 +7,7 @@ export default function Login() {
   const [credentials, setCredentials] = useState({ email: '', password: '' })
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch('https://goofood-ot7j3yjvw-belikeakash.vercel.app/api/loginuser', {
+    const response = await fetch('http://localhost:5000/api/loginuser', {
       method: 'POST',
       headers: {
         "Content-Type": 'application/json'
@@ -34,9 +34,24 @@ export default function Login() {
   return (
 
     <>
+      
       <div className="login-0">
-        <form onSubmit={handleSubmit}>
-
+        
+        <form onSubmit={handleSubmit} style={{border: '2px solid #84adff', padding:'20px', borderRadius: '10px'}}>
+        {/* <h2 style={{display:'flex', justifyContent:'center', color:'#e53935'}}>WELCOME TO DQUEUE</h2> */}
+        <h2 class="wavy" style={{display:'flex', justifyContent:'center', color: '#84adff'}}>
+          <span className="apple1">L</span>
+          <span className="apple2">O</span>
+          <span className="apple3">G</span>
+          <span className="apple4">I</span>
+          <span className="apple6">N</span>
+          <span className="apple6">.</span>
+          <span className="apple7"></span>
+          <span className="apple8">.</span>
+          <span className="apple9">.</span>
+        </h2>
+        <br />
+        <br />
           <div className="login-1">
             <label htmlFor="exampleInputEmail1" className="login-2">Email address</label>
             <input type="email" className="login-3" id="exampleInputEmail1" aria-describedby="emailHelp" name='email' value={credentials.email} onChange={onChange} />

@@ -1,6 +1,7 @@
 .signup-0 {
     height: 100vh;
     background-color: #f1f1f1;
+    color: #84adff;
 }
 
 input {
@@ -12,6 +13,7 @@ input {
     margin-top: 20px;
     display: flex;
     justify-content: center;
+    
 }
 .signup-1 {
     
@@ -20,7 +22,8 @@ input {
     align-items: center;
     
     padding: 20px;
-    padding-top: 20vh;
+    padding-top: 15vh;
+    
   }
   
   .signup-2 {
@@ -28,7 +31,7 @@ input {
   }
   
   .signup-3 {
-    width: 100%;
+    width: 92%;
     padding: 10px;
   }
   
@@ -40,28 +43,30 @@ input {
 
   .signup-6 {
     border: none;
-    background-color: #f44336;
-    height: 24px;
-    color: wheat;
+    background-color:#84adff;
+    height: 34px;
+    width: 20%;
+    color: white;
     border-radius: 3px;
+    
   }
   
   .signup-5 {
     margin-top: 10px;
-    color: #f44336;
+    color: #84adff;
     text-align: center;
     text-decoration: none;
   }
   
   .signup-5:hover {
-    color: #e53935;
+    color: #84adff;
   }
   
   /* Mobile devices */
   @media (max-width: 767px) {
     .signup-1 {
       padding: 10px;
-      padding-top: 50vh;
+      padding-top: 20vh;
     }
   }
   
@@ -77,7 +82,7 @@ input {
   @media (min-width: 1024px) {
     .signup-1 {
       padding: 20px;
-      padding-top: 30vh;
+      padding-top: 10vh;
     }
   }
   

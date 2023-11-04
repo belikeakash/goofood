@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useZxing } from "react-zxing";
 import '../styles/SelectStore.css'
 import Navbar from "../components/Navbar";
+import {AiOutlineScan, AiFillHome} from 'react-icons/ai'
 
 let storeId = 1;
 
@@ -26,13 +27,13 @@ const BarcodeScanner = () => {
       <Navbar />
       <div className="selectstore-0" >
       <div className="selectstore-1" style={{display:'flex', justifyContent:'center', alignItems:'center'}}>
-      <video ref={ref} style={{width:'300px', borderRadius: '10px' , border:'2px solid blue'}} />
+      <video ref={ref} style={{width:'300px', borderRadius: '10px' , border:'2px solid #84adff'}} />
       
       </div>
       <div className="selectstore-2" style={{display:'flex', justifyContent:'center', alignItems:'center'}}>
         {
-          result==='NO STORE SELECTED' ? <h1>SELECT A STORE</h1> : <div className="selectstore-3">
-            <h3>You have selected <div style={{textTransform:'Uppercase'}}>{result}</div></h3>
+          result==='NO STORE SELECTED' ? <h3 style={{ display:'inline-flex', alignItems: 'center' }}> {" "}<AiOutlineScan /> &nbsp; SCAN YOUR STORE</h3> : <div className="selectstore-3">
+            <h3>You have entered <div style={{textTransform:'Uppercase'}}>{result}</div></h3>
             <button className="selectstore-4" onClick={handleGoToStore}>Proceed to Products</button>
           </div>
         }

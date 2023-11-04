@@ -15,18 +15,23 @@
   
   .choose-2, .choose-3 {
     padding: 10px 20px;
-    background-color: #f44336;
+    background-color: #84adff;
     color: #fff;
     text-align: center;
     cursor: pointer;
+    border-radius: 20px;
+    transition: transform 330ms ease-in-out;
   }
   
   .choose-2:hover, .choose-3:hover {
-    background-color: #e53935;
+    border: none;
+    background-color: #fff;
+    color: #84adff;
+    transform: scale(1.4);
   }
   
   h3 {
-    color: #f44336;
+    color: #84adff;
     margin: 10px 0;
     font-size: 1.2em;
   }

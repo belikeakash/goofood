@@ -1,5 +1,5 @@
 export const reducer = (state, action) => {
-    switch (action.type) {
+    switch (action.type) { //if(action.type==="ADD") { }
         case "ADD":
             return [...state, { id: action.id, name: action.name, qty: action.qty, size: action.size, price: action.price, img: action.img }]
         case "REMOVE":

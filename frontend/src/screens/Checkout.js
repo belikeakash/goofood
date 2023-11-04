@@ -4,6 +4,8 @@ import { CartState } from "../components/Context";
 import { storeId } from "./SelectStore";
 import Navbar from '../components/Navbar'
 import '../styles/Checkout.css'
+import {BsFillCreditCardFill, BsFillCalendarDateFill} from 'react-icons/bs'
+import {MdOutlinePassword} from 'react-icons/md'
 
 export default function App() {
     const [country, setCountry] = useState('India')
@@ -77,21 +79,23 @@ export default function App() {
      console.log('rendered');   
     })
     return (
-        <div className="">
+        <div className="" >
             <Navbar />
-            <div className="checkout-0">
+            <div className="" style={{display:'flex', justifyContent:'center'}}>
+            <div className="checkout-0" style={{border:''}}>
             <div className="checkout-15">You are Shopping in : Store-{storeId}</div> 
             <div className="checkout-15">Your total is : {symbol}{totalPrice}</div>
             <div className="checkout-15">Enter Card Details</div>
-            <div className="checkout-1">Card number</div>
+            <div className="checkout-1"><BsFillCreditCardFill /></div>
             <input className="checkout-2" type="text" placeholder="1234 1234 1234 1234" value={cardValue} onChange={(e)=>setcardValue(e.target.value)}/>
             <div className="checkout-3" style={{ display: 'flex' }}>
                 <div className="checkout-4">
-                    <div className="checkout-5">Expiration</div>
+                    <div className="checkout-5"><BsFillCalendarDateFill /></div>
                     <input className="checkout-6" type="text" placeholder="MM / YY" value={expValue} onChange={(e)=>setexpValue(e.target.value)} />
                 </div>
+                &nbsp;
                 <div className="checkout-7">
-                    <div className="checkout-8">CVC</div>
+                    <div className="checkout-8"><MdOutlinePassword /></div>
                     <input className="checkout-9" type="text" placeholder="CVC" value={cvcValue} onChange={(e)=>setcvcValue(e.target.value)} />
                 </div>
 
@@ -109,6 +113,7 @@ export default function App() {
             
 
             <button className="checkout-12" onClick={generateSimplePDF}>Pay & Generate Bill</button>
+            </div>
         </div>
         </div>
     );

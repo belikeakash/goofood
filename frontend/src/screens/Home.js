@@ -3,6 +3,7 @@ import Card from '../components/Card'
 import Navbar from '../components/Navbar'
 import { storeId } from './SelectStore'
 import '../styles/Home.css'
+import {BiSearchAlt} from 'react-icons/bi'
 
 export default function Home() {
   const [search, setSearch] = useState('')
@@ -15,7 +16,7 @@ export default function Home() {
   else if (storeId === 2) {
     storeData = '2';
   }
-  const url = `https://goofood-ot7j3yjvw-belikeakash.vercel.app/api/foodData${storeData}`
+  const url = `http://localhost:5000/api/foodData${storeData}`
   // console.log('url', url);
   const loadData = async () => {
     console.log(url);
@@ -35,20 +36,25 @@ export default function Home() {
   return (
     <div>
       <Navbar />
-      <div className="">
-      <div className='home-1' style={{paddingTop:'20px', display:'flex', justifyContent:'center'}}>
-                       <input style={{backgroundColor: 'lightgrey', color:'black'}} className="home-2" type="search" placeholder="Search" aria-label="Search" value={search} onChange={(e) => { setSearch(e.target.value) }} />
-
+      <div className="home-x-top">
+      <div className="home-x" >
+      <br />
+      <div className='home-1' style={{ display:'flex', alignItems: 'center', justifyContent:'center' }}>
+                       <input style={{backgroundColor: '', color:'white', height:'30px'}} className="home-2" type="search" placeholder="Search" aria-label="Search" value={search} onChange={(e) => { setSearch(e.target.value) }} /> 
+                  
 
       </div>
+      <br />
+      <div className="home-3-top">
       <div className='home-3'>
         {
-          foodCat !== [] ? foodCat.map((data) => {
+          foodCat != [] ? foodCat.map((data) => {
             return (<div className="home-4">
-              <div style={{margin:'10px'}} key={data._id} className='home-5'>{data.CategoryName}</div>
-              <hr />
+              <hr style={{margin:'20px 5vw'}} className='hr-class' />
+              <h2 style={{margin:'10px 5vw', textAlign:'center', color:'#2460a7ff'}} key={data._id} className='home-5'>{data.CategoryName}</h2>
+              <hr style={{margin:'20px 5vw'}} className='hr-class' />
               <div className="home-6" style={{display:'flex', flexWrap:'wrap', justifyContent:'space-around'}}>
-              {foodItem !== [] ? foodItem.filter((item) => item.CategoryName === (data.CategoryName) && (item.name.toLowerCase().includes(search))).map(filterItems => {
+              {foodItem != [] ? foodItem.filter((item) => item.CategoryName === (data.CategoryName) && (item.name.toLowerCase().includes(search))).map(filterItems => {
                 return (
                   <div key={filterItems._id} className="home-7" style={{ }}>
                     <Card _id={filterItems._id} name={filterItems.name}
@@ -66,7 +72,9 @@ export default function Home() {
         }
       </div>
       </div>
+      </div>
       {/* <Footer /> */}
+      </div>
     </div>
   )
 }

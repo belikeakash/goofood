@@ -25,11 +25,12 @@
   
     .cart-5 {
       padding: 10px 20px;
-      background-color: #f44336;
+      background-color: #84adff;
       color: #fff;
-      border: none;
       cursor: pointer;
       font-size: 14px;
+      border: none;
+      border-radius: 10px;
     }
   }
   
@@ -60,11 +61,13 @@
   
     .cart-5 {
       padding: 15px 30px;
-      background-color: #f44336;
+      background-color: #84adff;
       color: #fff;
-      border: none;
       cursor: pointer;
       font-size: 16px;
+      
+      border: none;
+      border-radius: 10px;
     }
   }
   
@@ -95,11 +98,21 @@
   
     .cart-5 {
       padding: 20px 40px;
-      background-color: #f44336;
+      background-color: #84adff;
       color: #fff;
-      border: none;
       cursor: pointer;
       font-size: 18px;
+      
+      border: none;
+      border-radius: 10px;
     }
   }
   
+  .empty {
+    display: flex;
+    justify-content: center;
+    margin-top: 30vh;
+    color: #84adff;
+  }
+
+  .cart-9 {}

@@ -11,7 +11,7 @@ a {
 
 
     .navbar-0 {
-        background-color: #f1f1f1;
+        /* background-color: #f1f1f1; */
         padding: 10px;
     }
 
@@ -23,16 +23,29 @@ a {
 
     .navbar-2 {
         width: 30vw;
-        color: #f44336;
+        color: #2460a7ff;
         font-weight: bold;
         text-decoration: none;
+        font-size: 28px;
     }
-
+    .navbar-2>a{
+        color: #2460a7ff;
+    }
     .navbar-3 {
         width: 70vw;
         display: flex;
         justify-content: space-around;
         align-items: center;
+        margin-top: 10px;
     }
 
     
+a {
+    color: #2460a7ff;
+    font-size: 24px;
+}
+
+.navbar-4 {
+    color: #2460a7ff;
+    font-size: 24px;
+}

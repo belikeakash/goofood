@@ -4,6 +4,7 @@ import { useZxing } from "react-zxing";
 import { CartState } from '../../components/Context';
 import { storeId } from "../SelectStore";
 import '../../styles/ProductBarcode.css'
+import {BsCartPlusFill} from 'react-icons/bs'
 
 
 
@@ -19,7 +20,7 @@ const BarcodeScanner = () => {
   else if (storeId === 2) {
     storeData = '2';
   }
-  const url = `https://goofood-ot7j3yjvw-belikeakash.vercel.app/api/foodData${storeData}`
+  const url = `http://localhost:5000/api/foodData${storeData}`
   const loadData = async () => {
     console.log(url);
     let response = await fetch(url, {
@@ -68,12 +69,11 @@ const BarcodeScanner = () => {
     for (const item of data) {
       if (item.id === pro._id) {
         food = item;
-
         break;
       }
     }
     //console.log(food)
-    if (food !== []) {
+    if (food != []) {
       if (food.name === pro.name) {
         await dispatch({ type: "UPDATE", id: pro._id, price: qty * (pro.Price), qty: qty })
         setQty(1)
@@ -97,16 +97,18 @@ const BarcodeScanner = () => {
   return (
     <div className="barcode-0" >
       <div className="" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-        <video ref={ref} style={{ width: '300px', borderRadius:'10px' , border: '2px solid blue' }} />
+        <video ref={ref} style={{ width: '300px', borderRadius:'10px' , border: '2px solid #84adff' }} />
 
       </div>
       <div className="barcode-1">
         {
-          result === 'NO STORE SELECTED' ? <h1>Scan a product</h1> : <div className="barcode-2">
-            <div className="barcode-3">You selected {pro.name}</div>
-            <div className="barcode-4">It's price is {pro.Price}<div />
+          result === 'NO STORE SELECTED' ? <h1 style={{color:'white'}}>Scan a product</h1> : <div className="barcode-2">
+            <div className="barcode-3">Product : {pro.name}</div>
+            <div className="barcode-4"> Price : {pro.Price}<div />
+              <div className="" style={{ display:'inline-flex', alignItems: 'center', justifyContent:'center' }}>
               <input className="barcode-5" type="text" value={qty} placeholder="Enter Quantity" onChange={(e) => { setQty(e.target.value) }} />
-              <button className="barcode-6" onClick={handleAddtoCart}>Add to Cart</button>
+              <button className="barcode-6" onClick={handleAddtoCart}><BsCartPlusFill /></button>
+              </div>
             </div>
             </div>
         }
